@@ -3,11 +3,62 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Gifts from "./routes/Gifts";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Wishlist from "./routes/Wishlist";
+import CreateGifts from "./routes/CreateGifts";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    loader() {
+      return fetch('/gifts.json').then((response) => {
+        return response.json();
+      });
+    }
+  },
+  {
+    path: "/gifts/:slug",
+    element: <Gifts />,
+    loader(loaderData) {
+      return fetch('/gifts.json').then((response) => {
+        return response.json();
+      }).then((gifts) => {
+        // filter
+        return gifts.filter((gift) => {
+          return gift.slug === loaderData.params.slug;
+        });
+      });
+    }
+  },
+  {
+    path: "/wishlist",
+    element: <Wishlist />,
+    loader() {
+      return fetch('/gifts.json').then((response) => {
+        return response.json();
+      });
+    }
+  },
+  {
+    path: "/new-gifts",
+    element: <CreateGifts />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

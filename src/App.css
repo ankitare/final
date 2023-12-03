@@ -36,3 +36,100 @@
     transform: rotate(360deg);
   }
 }
+
+.cardcontain{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.pagecontain{
+  margin: 20px;
+}
+
+.title{
+  text-align: center;
+}
+
+.containsearch{
+  text-align: center;
+}
+
+.search-bar{
+  border-color: green;
+  height: 40px;
+}
+
+input{
+  text-align:center;
+}
+
+.card{
+  margin-bottom: 20px;
+}
+
+.more-button.btn{
+  background-color: green;
+  border-radius: 10px;
+  color: white;
+}
+
+.more-button.btn:hover{
+  background-color: lightgreen;
+  border-radius: 10px;
+  color: white;
+}
+
+.giftname{
+  margin-top: 20px;
+}
+
+.linkcolor{
+  color: green;
+}
+
+.banner {
+  background-image: url('https://www.howlifeunfolds.com/sites/default/files/styles/article_hero/public/2021-11/Article%20header.jpg?itok=Ema-8zOV');
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  padding: 100px 100px;
+}
+
+.imgsize {
+  height: 400px;
+}
+ 
+.tags{
+  margin-top: 30px;
+}
+
+.gift-content{
+  text-align: center;
+}
+
+.add{
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.buttonstyle.btn{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* .buttonstyle.btn:hover{
+  background-color: transparent;
+  border-color: transparent;
+} */
+
+.wishlisticon{
+  color:green;
+  /* padding-left: 70px; */
+  /* border-color: green; */
+}
+
+/* .logo{
+  color: green;
+} */
