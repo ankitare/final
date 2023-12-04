@@ -1,13 +1,19 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Nav from "../Nav";
 import "../App.css";
 import Cards from "../Cards";
+import {updateWishlist} from "../updateWishlist";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Home() {
     const gifts = useLoaderData();
+    console.log("Initial Gifts State:", gifts);
     const [giftsFilter, setGiftsFilter] = useState(gifts);
-    // const [isOnWishlist, setIsOnWishlist] = useState(gifts);
+
+    useEffect(() => {
+        document.title = `Gifting 101: Browse Gifts`;
+    }, []);
 
     return(
         <div>
@@ -29,32 +35,35 @@ export default function Home() {
                 {giftsFilter.map((gift) => (
                     <Cards
                         className = "card"
+                        id={gift.id}
                         key={gift.name}
                         image={gift.image}
                         title={gift.name}
                         text={gift.category}
-                        // buttonText="View Gift Page"
                         buttonLink= {<Link to={`/gifts/${gift.slug}`}><button className="more-button btn">View Gift Page</button></Link>}
                         showWishlist = {true}
-                        // isOnWishlist = {gift.isOnWishlist}
-                        // onClick={(wishlisted) => {
-                        //     const updatedWishlist = {
-                        //     isOnWishlist : wishlisted ? false : true,
-                        // };
-                        //     setIsOnWishlist(updatedWishlist);
-                        // }}
+                        isOnWishlist={gift.isOnWishlist}
+                        onClick={(id, addWishlist) => {
+                            const updatedWishlist = {
+                              isOnWishlist: addWishlist ? false : true,
+                            };
+                            updateWishlist(id, updatedWishlist).then(
+                              () => {
+                                addWishlist
+                                  ? toast.success(`Success! ${gift.name} was added to your wishlist :)`)
+                                  : toast.success(`Success! ${gift.name} was removed from your wishlist :)`);
+                              },
+                              () => {
+                                addWishlist
+                                  ? toast.error(`Sorry, could not remove ${gift.name} from your wishlist :(`)
+                                  : toast.error(`Sorry, could not add ${gift.name} to your wishlist :(`);
+                              }
+                            );
+                        }}
                     />
                 ))}
             </div>
-            {/* <ol>
-                {giftsFilter.map((gift) => {
-                    return (
-                        <li key={gift.name}>
-                        <Link to={`/gifts/${gift.slug}`}>{gift.name}</Link>
-                        </li>
-                    );
-                })}
-            </ol>  */}
+            <ToastContainer position="top-right" autoClose={500} />
             </div>
         </div>
     );

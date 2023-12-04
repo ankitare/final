@@ -1,10 +1,14 @@
-import {useState} from "react";
+import {useEffect} from "react";
 import { Link } from "react-router-dom";
 import Nav from "../Nav";
 import Cards from "../Cards";
 import "../App.css";
 
 export default function About() {
+    useEffect(() => {
+        document.title = `Gifting 101: About Us`;
+    }, []);
+
     return(
         <div>
             <Nav />

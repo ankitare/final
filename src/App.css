@@ -133,3 +133,11 @@ input{
 /* .logo{
   color: green;
 } */
+
+.form-control{
+  text-align: left;
+}
+
+.btn-space{
+  margin-left: 10px;
+}

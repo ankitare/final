@@ -1,52 +1,70 @@
-[
+{
+  "gifts": [
     {
+      "id": "1",
       "image": "https://cdn.cliqueinc.com/posts/280736/outfits-with-jean-jackets-280736-1664854403189-square.700x0c.jpg",
       "name": "Denim Jacket",
       "category": "Clothing",
       "slug": "denim-jacket",
-      "price": "$50",
+      "price": "50",
       "bio": "Elevate your style with our Denim Essential Jacket. It is a versatile and timeless piece that complements any look. Crafted for comfort and designed for effortless cool, this jacket is your go-to for casual chic vibes. Upgrade your wardrobe with a touch of denim perfection.",
       "amazon": "denim+jacket",
-      "isOnWishlist": true
+      "isOnWishlist": false
     },
     {
+      "id": "2",
       "image": "https://www.lego.com/cdn/cs/set/assets/blt58413bef9764357b/10255_alt1.jpg",
       "name": "Lego Set",
       "category": "Toys",
       "slug": "lego-set",
-      "price": "$30",
+      "price": "30",
       "bio": "Unlock the joy of building with our lego set! Whether you're a seasoned builder or discovering the magic of Lego for the first time, this set brings endless fun and creativity. Build, play, and let your imagination soar with this perfect gift for all ages.",
-      "amazon": "lego+set", 
+      "amazon": "lego+set",
       "isOnWishlist": false
     },
     {
+      "id": "3",
       "image": "https://m.media-amazon.com/images/I/71SRAoRJT7L.jpg",
       "name": "Winter Candle",
       "category": "Home",
       "slug": "winter-candle",
-      "price": "$10",
+      "price": "10",
       "bio": "Embrace the cozy warmth of the season with this winter candle. Infused with enchanting scents, this candle creates a snug ambiance, perfect for chilly nights and festive gatherings. Elevate the spirit of winter with the gift of tranquility and comfort.",
-      "amazon": "winter+candle", 
+      "amazon": "winter+candle",
       "isOnWishlist": false
     },
     {
+      "id": "4",
       "image": "https://m.media-amazon.com/images/I/71eoBn3BbgL.jpg",
       "name": "Throw Blanket",
       "category": "Home",
       "slug": "throw-blanket",
-      "price": "$40",
+      "price": "40",
       "bio": "Discover warmth and style in our versatile throw blanket. Perfect for couches or beds, it brings comfort to any space. Embrace the coziness as it is your essential for extra warmth!",
-      "amazon": "throw+blanket", 
+      "amazon": "throw+blanket",
       "isOnWishlist": false
     },
     {
+      "id": "5",
       "image": "https://cdn.trendhunterstatic.com/phpthumbnails/515/515513/515513_1_600.jpeg?auto=webp",
       "name": "Lip Gloss",
       "category": "Makeup",
       "slug": "lip-gloss",
-      "price": "$25",
+      "price": "25",
       "bio": "Enhance your lips with our hydrating lip gloss. Achieve a natural, radiant finish that adds a touch of glamour to your everyday look. Embrace the effortless beauty since it makes your lips better!",
-      "amazon": "lip+gloss", 
+      "amazon": "lip+gloss",
       "isOnWishlist": false
+    },
+    {
+      "image": "https://i.etsystatic.com/13690591/r/il/8caf4f/3294776968/il_570xN.3294776968_o6x2.jpg",
+      "name": "USC Sweatshirt",
+      "category": "Clothing",
+      "slug": "usc-sweatshirt",
+      "price": "45",
+      "bio": "Introducing the USC Sweatshirt, a stylish and comfortable garment that proudly represents the spirit of the University of Southern California. Crafted with the utmost attention to detail, this sweatshirt is more than just clothing; it's a symbol of Trojan pride and a nod to the rich traditions of USC.",
+      "amazon": "usc+sweatshirt",
+      "isOnWishlist": false,
+      "id": "Cwspq66"
     }
   ]
+}

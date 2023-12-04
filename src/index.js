@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -16,7 +15,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
     loader() {
-      return fetch('/gifts.json').then((response) => {
+      return fetch('http://localhost:5000/gifts').then((response) => {
         return response.json();
       });
     }
@@ -25,7 +24,7 @@ const router = createBrowserRouter([
     path: "/gifts/:slug",
     element: <Gifts />,
     loader(loaderData) {
-      return fetch('/gifts.json').then((response) => {
+      return fetch('http://localhost:5000/gifts').then((response) => {
         return response.json();
       }).then((gifts) => {
         // filter
@@ -39,7 +38,7 @@ const router = createBrowserRouter([
     path: "/wishlist",
     element: <Wishlist />,
     loader() {
-      return fetch('/gifts.json').then((response) => {
+      return fetch('http://localhost:5000/gifts').then((response) => {
         return response.json();
       });
     }
