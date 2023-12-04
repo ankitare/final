@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Nav from "../Nav";
 import {Image, Row, Col} from 'react-bootstrap';
 import { deleteGift } from "../deleteGift";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Gifts() {
     const giftData = useLoaderData();
@@ -13,15 +14,6 @@ export default function Gifts() {
     useEffect(() => {
         document.title = `Gifting 101: Gift Page`;
     }, []);
-
-    // const handleDelete = async () => {
-    //     try {
-    //       await deleteGift(gift.id);
-    //       setIsDeleted(true);
-    //     } catch (error) {
-    //       console.error("Error deleting gift:", error);
-    //     }
-    // };
 
     return(
         <div>
@@ -37,7 +29,17 @@ export default function Gifts() {
                     <h5>Gift Category: {gift.category}</h5>
                     {/* {<Link to={`https://www.amazon.com/s?k=${gift.amazon}`}><button className="more-button btn add">Add to Wishlist</button></Link>} */}
                     {<Link to={`https://www.amazon.com/s?k=${gift.amazon}`}><button className="more-button btn add">Browse {gift.name}s</button></Link>}
-                    <button className="more-button btn add">Delete {gift.name}</button>
+                    <button className="more-button btn add" onClick={() => {
+                        deleteGift(gift.id).then(() => {
+                            toast.success("Successfully deleted the gift.");
+                            setIsDeleted(true);
+                        },
+                        () => {
+                            toast.error("Unsuccessfully deleted the gift. Please try again!");
+                        }
+                        );}}
+                        disabled={isDeleted}
+                    > Delete {gift.name} </button>
                     </Col>
                     <Col className="gift-content">
                     <Image src={gift.image} className="imgsize"/>
