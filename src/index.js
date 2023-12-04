@@ -9,6 +9,7 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Wishlist from "./routes/Wishlist";
 import CreateGifts from "./routes/CreateGifts";
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {

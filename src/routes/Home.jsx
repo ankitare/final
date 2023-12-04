@@ -12,7 +12,7 @@ export default function Home() {
     const [giftsFilter, setGiftsFilter] = useState(gifts);
 
     useEffect(() => {
-        document.title = `Gifting 101: Browse Gifts`;
+        document.title = `Gifting 101 - Browse Gifts`;
     }, []);
 
     return(
@@ -43,20 +43,21 @@ export default function Home() {
                         buttonLink= {<Link to={`/gifts/${gift.slug}`}><button className="more-button btn">View Gift Page</button></Link>}
                         showWishlist = {true}
                         isOnWishlist={gift.isOnWishlist}
-                        onClick={(id, addWishlist) => {
-                            const updatedWishlist = {
-                              isOnWishlist: addWishlist ? false : true,
-                            };
+                        onClick={(id) => {
+                            const isAddingWishlist = !gift.isOnWishlist; 
+
+                        const updatedWishlist = {
+                            isOnWishlist: isAddingWishlist,
+                        }
+
                             updateWishlist(id, updatedWishlist).then(
                               () => {
-                                addWishlist
-                                  ? toast.success(`Success! ${gift.name} was added to your wishlist :)`)
-                                  : toast.success(`Success! ${gift.name} was removed from your wishlist :)`);
+                                  const action = isAddingWishlist ? "added to" : "removed from";
+                                  toast.success(`Success! ${gift.name} was ${action} your wishlist :)`);
                               },
                               () => {
-                                addWishlist
-                                  ? toast.error(`Sorry, could not remove ${gift.name} from your wishlist :(`)
-                                  : toast.error(`Sorry, could not add ${gift.name} to your wishlist :(`);
+                                const action = isAddingWishlist ? "add" : "remove";
+                                toast.error(`Sorry, could not ${action} ${gift.name} from your wishlist :(`);
                               }
                             );
                         }}

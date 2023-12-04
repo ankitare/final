@@ -6,7 +6,7 @@ import "../App.css";
 
 export default function About() {
     useEffect(() => {
-        document.title = `Gifting 101: About Us`;
+        document.title = `Gifting 101 - About Us`;
     }, []);
 
     return(

@@ -12,7 +12,7 @@ export default function Gifts() {
     const [isDeleted, setIsDeleted] = useState(false);
 
     useEffect(() => {
-        document.title = `Gifting 101: Gift Page`;
+        document.title = `Gifting 101 - ${gift.name}`;
     }, []);
 
     return(
@@ -31,11 +31,11 @@ export default function Gifts() {
                     {<Link to={`https://www.amazon.com/s?k=${gift.amazon}`}><button className="more-button btn add">Browse {gift.name}s</button></Link>}
                     <button className="more-button btn add" onClick={() => {
                         deleteGift(gift.id).then(() => {
-                            toast.success("Successfully deleted the gift.");
+                            toast.success(`Successfully deleted the gift ${gift.name}`);
                             setIsDeleted(true);
                         },
                         () => {
-                            toast.error("Unsuccessfully deleted the gift. Please try again!");
+                            toast.error(`Unsuccessfully deleted the gift ${gift.name}. Please try again!`);
                         }
                         );}}
                         disabled={isDeleted}
@@ -46,6 +46,7 @@ export default function Gifts() {
                     </Col>
                 </Row>
              </div>
+             <ToastContainer position="top-right" autoClose={500} />
         </div>
     );
 }

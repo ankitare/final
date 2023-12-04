@@ -7,6 +7,11 @@ import { faGift } from '@fortawesome/free-solid-svg-icons';
 function Cards(props) {
   const [wishlist, setWishlist] = useState(props.wishlist);
 
+  function dateFormat(date){
+    const newDate = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
+    return new Date(date).toLocaleDateString([], newDate);
+  }
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={props.image} />
@@ -14,6 +19,12 @@ function Cards(props) {
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>
           {props.text}
+          {props.dateAdded && (
+            <div className="date">
+              <strong>Date Added to Wishlist: </strong>
+              {dateFormat(props.dateAdded)}
+            </div>
+          )}
         </Card.Text>
         {props.buttonLink}
         {props.showWishlist && (
@@ -22,6 +33,7 @@ function Cards(props) {
             setWishlist(!wishlist);
           }}>
             <FontAwesomeIcon icon={faGift} className="wishlisticon"/>
+            Wishlist
           </Button>
         )}
       </Card.Body>

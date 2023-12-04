@@ -13,7 +13,7 @@ export default function Wishlist() {
     const [wishlist, setWishList] = useState(giftsWishlist);
 
     useEffect(() => {
-        document.title = `Gifting 101: My Wishlist`;
+        document.title = `Gifting 101 - My Wishlist`;
     }, []);
 
     return (
@@ -30,6 +30,7 @@ export default function Wishlist() {
                     image={gift.image}
                     title={gift.name}
                     text={gift.category}
+                    dateAdded={gift.dateAdded}
                     buttonLink={<Link to={`/gifts/${gift.slug}`}><button className="more-button btn">View Gift Page</button></Link>}
                     showWishlist={true}
                     onClick={(giftId) => {

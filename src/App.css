@@ -115,17 +115,26 @@ input{
 }
 
 .buttonstyle.btn{
-  background-color: transparent;
-  border-color: transparent;
+  background-color: green;
+  border-radius: 10px;
+  border-color: green;
+  margin-left: 10px;
 }
 
-/* .buttonstyle.btn:hover{
-  background-color: transparent;
-  border-color: transparent;
-} */
+.buttonstyle.btn:hover{
+  background-color: lightgreen;
+  border-radius: 10px;
+  border-color: lightgreen;
+  margin-left: 10px;
+}
+
+.date{
+  margin-top: 10px;
+  font-size: 13px;
+}
 
 .wishlisticon{
-  color:green;
+  color:white;
   /* padding-left: 70px; */
   /* border-color: green; */
 }
@@ -140,4 +149,8 @@ input{
 
 .btn-space{
   margin-left: 10px;
+}
+
+.text-danger{
+  font-size: 14px;
 }

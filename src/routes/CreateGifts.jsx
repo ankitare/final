@@ -19,7 +19,7 @@ export default function CreateGifts() {
     const [validationErrors, setValidationErrors] = useState({});
 
     useEffect(() => {
-        document.title = `Gifting 101: Create a Gift`;
+        document.title = `Gifting 101 - Create a Gift`;
     }, []);
 
     function formValidate(name, image, price, category, bio) {
@@ -29,18 +29,24 @@ export default function CreateGifts() {
 
         if (!/\d/.test(price)) {
             display.Price = "Price can only be numeric!";
+        } else if (price.length < 1){
+            display.Price = "Revise your price to be at least 1 number!";
         }
         
         if (characters.test(name)) {
             display.Name = "Name of gift can not have special characters!";
         } else if (/\d/.test(name)) {
             display.Name = "Name of gift can not have numbers!";
-        } 
+        } else if (name.length < 3){
+            display.Name = "Revise your gift name to be at least 3 characters!";
+        }
 
         if (characters.test(category)) {
             display.Category = "Name of gift can not have special characters!";
         } else if (/\d/.test(category)) {
             display.Category = "Name of gift can not have numbers!";
+        } else if (category.length < 3){
+            display.Category = "Revise your category name to be at least 3 characters!";
         }
         
         if (bio.length < 20) {
@@ -104,27 +110,17 @@ export default function CreateGifts() {
           addGift(giftData).then(
             () => {
               setIsSubmitted(true);
-              toast.success("Successfully added the gift.");
+              toast.success(`Successfully added the gift ${giftData.name}`);
             },
             () => {
               setIsSubmitted(false);
-              toast.error("Failed to add the gift. Please try again!");
+              toast.error(`Unsuccessfully deleted the gift ${giftData.name}. Please try again!`);
             }
         );
     };
         
     return(
         <div>
-            {/* {Object.keys(validationErrors).length > 0 && (
-                <div>
-                    <p>Validation errors:</p>
-                    <ul>
-                        {Object.values(validationErrors).map((error, index) => (
-                        <li key={index}>{error}</li>
-                        ))}
-                    </ul>
-                </div>
-            )} */}
             <Nav />
             <div className="pagecontain">
                 {isSubmitted ? (<div>You just added a new gift to Gifting 101! Here are some details about your submission: <br/>
@@ -148,6 +144,9 @@ export default function CreateGifts() {
                     value={name}
                     onChange={(event) => setName(event.target.value)}
                 />
+                {validationErrors.Name && (
+                    <p className="text-danger">{validationErrors.Name}</p>
+                )}
                 </div>
         
                 <div className="mb-3">
@@ -162,6 +161,9 @@ export default function CreateGifts() {
                     value={category}
                     onChange={(event) => setCategory(event.target.value)}
                 />
+                {validationErrors.Category && (
+                    <p className="text-danger">{validationErrors.Category}</p>
+                )}
                 </div>
 
                 <div className="mb-3">
@@ -176,6 +178,9 @@ export default function CreateGifts() {
                     value={price}
                     onChange={(event) => setPrice(event.target.value)}
                 />
+                {validationErrors.Price && (
+                    <p className="text-danger">{validationErrors.Price}</p>
+                )}
                 </div>
 
                 <div className="mb-3">
@@ -190,6 +195,9 @@ export default function CreateGifts() {
                     value={image}
                     onChange={(event) => setImage(event.target.value)}
                 />
+                {validationErrors.Image && (
+                    <p className="text-danger">{validationErrors.Image}</p>
+                )}
                 </div>
 
                 <div className="mb-3">
@@ -204,6 +212,9 @@ export default function CreateGifts() {
                     value={bio}
                     onChange={(event) => setBio(event.target.value)}
                 />
+                {validationErrors.Bio && (
+                    <p className="text-danger">{validationErrors.Bio}</p>
+                )}
                 </div>
             
                 <button type="submit" className="more-button btn">
@@ -229,6 +240,7 @@ export default function CreateGifts() {
                 
 
             </div>
+            <ToastContainer position="top-right" autoClose={500} />
         </div>
     );
 }
