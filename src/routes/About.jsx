@@ -10,9 +10,9 @@ export default function About() {
     }, []);
 
     return(
-        <div>
+        <div data-testid="about">
             <Nav />
-        <div className = "pagecontain">
+        <div className = "pagecontain" data-testid="pagecontain">
             <h1> About Us </h1>
             Welcome to the ultimate gift exchange hosting platform! If you're someone who wants to simplify gift giving for your friends and loved ones, you've come to the right place. We know that gift giving can be a stressful process, especially during the holiday season. That's why we've created this platform to provide you with a guideline of what people want, so you can host gift exchanges throughout the year without any hassle. <br/>
             <br/>
@@ -24,7 +24,7 @@ export default function About() {
                     text="Here you can browse through some curated gift ideas."
                     // buttonText="Explore Gifts"
                     buttonLink= {<Link to="/"><button className="more-button btn">Explore Gifts</button></Link>}
-                    showBookmark = {false}
+                    showWishlist = {false}
                 />
                 <Cards
                     image="https://cf.ltkcdn.net/www/images/orig/349255-2121x1414-gift-exchange-1354243510.jpg"
@@ -32,7 +32,7 @@ export default function About() {
                     text="Here you can view and edit your gift preferences and wishlist."
                     // buttonText="Explore Wishlist"
                     buttonLink= {<Link to="/wishlist"><button className="more-button btn">Explore Wishlist</button></Link>}
-                    showBookmark = {false}
+                    showWishlist = {false}
                 />
                 <Cards
                     image="https://hips.hearstapps.com/hmg-prod/images/how-to-wrap-a-gift-like-a-pro-1650557383.jpg"
@@ -40,7 +40,7 @@ export default function About() {
                     text="Here you can add new gifts and details associated with the gifts."
                     // buttonText="Create Gift Entries"
                     buttonLink= {<Link to="/new-gifts"><button className="more-button btn">Create Gift Entries</button></Link>}
-                    showBookmark = {false}
+                    showWishlist = {false}
                 /> 
                 <Cards
                     image="https://hips.hearstapps.com/hmg-prod/images/woman-wrapping-christmas-gifts-1607115062.jpg"
@@ -48,7 +48,7 @@ export default function About() {
                     text="Here you can read gift related blog posts curated by our team."
                     // buttonText="Create Gift Entries"
                     buttonLink= {<Link to="/blog"><button className="more-button btn">Read Blog Posts</button></Link>}
-                    showBookmark = {false}
+                    showWishlist = {false}
                 />
                 {/* reviews instead maybe */}
             </div>

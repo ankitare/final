@@ -3,7 +3,7 @@ import "./App.css";
 
 export default function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light mb-2">
+    <nav className="navbar navbar-expand-lg bg-light mb-2" data-testid="nav">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           Gifting 101
