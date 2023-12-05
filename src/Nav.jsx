@@ -21,6 +21,11 @@ export default function Nav() {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/blog" className="nav-link">
+                Gift Blog
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to="/about" className="nav-link">
                 About Us
               </Link>

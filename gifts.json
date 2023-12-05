@@ -10,7 +10,7 @@
       "bio": "Elevate your style with our Denim Essential Jacket. It is a versatile and timeless piece that complements any look. Crafted for comfort and designed for effortless cool, this jacket is your go-to for casual chic vibes. Upgrade your wardrobe with a touch of denim perfection.",
       "amazon": "denim+jacket",
       "isOnWishlist": false,
-      "dateAdded": "2023-12-04T22:27:18.384Z"
+      "dateAdded": "2023-12-05T02:55:03.369Z"
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
       "bio": "Unlock the joy of building with our lego set! Whether you're a seasoned builder or discovering the magic of Lego for the first time, this set brings endless fun and creativity. Build, play, and let your imagination soar with this perfect gift for all ages.",
       "amazon": "lego+set",
       "isOnWishlist": false,
-      "dateAdded": null
+      "dateAdded": "2023-12-05T03:08:46.470Z"
     },
     {
       "id": "3",
@@ -34,7 +34,7 @@
       "bio": "Embrace the cozy warmth of the season with this winter candle. Infused with enchanting scents, this candle creates a snug ambiance, perfect for chilly nights and festive gatherings. Elevate the spirit of winter with the gift of tranquility and comfort.",
       "amazon": "winter+candle",
       "isOnWishlist": false,
-      "dateAdded": "2023-12-04T22:28:25.952Z"
+      "dateAdded": "2023-12-05T02:53:20.717Z"
     },
     {
       "id": "4",
@@ -58,7 +58,7 @@
       "bio": "Enhance your lips with our hydrating lip gloss. Achieve a natural, radiant finish that adds a touch of glamour to your everyday look. Embrace the effortless beauty since it makes your lips better!",
       "amazon": "lip+gloss",
       "isOnWishlist": false,
-      "dateAdded": null
+      "dateAdded": "2023-12-05T03:06:43.509Z"
     },
     {
       "image": "https://i.etsystatic.com/13690591/r/il/8caf4f/3294776968/il_570xN.3294776968_o6x2.jpg",
@@ -66,11 +66,28 @@
       "category": "Clothing",
       "slug": "usc-sweatshirt",
       "price": "45",
-      "bio": "The USC Sweatshirt features a modern and versatile design, making it suitable for both casual outings and spirited campus events. The soft and breathable fabric ensures all-day comfort, while the detailed embroidery of the USC logo adds a touch of collegiate sophistication.",
+      "bio": "This is a product description for USC Sweatshirt.",
       "amazon": "usc+sweatshirt",
       "isOnWishlist": false,
-      "id": "epqGw-3",
-      "dateAdded": null
+      "id": "Oar7gXn"
+    }
+  ],
+  "blog": [
+    {
+      "title": "DIY Christmas Gifts",
+      "image": "https://www.lifeinthefingerlakes.com/wp-content/uploads/2017/10/gift-ideas-690x394.jpg",
+      "author": "Sarah James",
+      "id": "1",
+      "slug": "diy-gifts",
+      "content": "Tis the season for spreading joy and warmth through thoughtful gifts! If you're looking to add a personal touch to your Christmas presents this year, why not try your hand at some delightful and budget-friendly DIY gifts? We've curated a list of 10 heartwarming ideas that will not only save you money but also show your loved ones how much you care. You can make handmade bath bombs, photo coasters, or a DIY blanket. This Christmas, let your creativity shine with these DIY gifts that are sure to warm the hearts of your friends and family. Remember, it's the thought and effort that make a gift truly special. Happy crafting!"
+    },
+    {
+      "title": "How to Organize Secret Santa",
+      "image": "https://t3.ftcdn.net/jpg/03/95/87/82/360_F_395878286_UzbOsNIPGgIyf5eUcVakBbLXs1QWAtFU.jpg",
+      "author": "Beth Smith",
+      "id": "2",
+      "slug": "secret-santa",
+      "content": "The holiday season is the perfect time to spread joy and laughter, and what better way to do that than through a Secret Santa gift exchange? Whether it's with your colleagues, friends, or family, organizing a Secret Santa can add an extra layer of festive fun to your celebrations. In this blog post, we'll guide you through the steps to organize a memorable Secret Santa event that will leave everyone with smiles and cherished memories."
     }
   ]
 }

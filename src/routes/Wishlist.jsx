@@ -25,7 +25,7 @@ export default function Wishlist() {
             <div className="cardcontain">
                 {giftsWishlist.map((gift) => (
                 <Cards
-                id={gift.id}
+                    id={gift.id}
                     key={gift.name}
                     image={gift.image}
                     title={gift.name}

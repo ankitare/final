@@ -42,6 +42,14 @@ export default function About() {
                     buttonLink= {<Link to="/new-gifts"><button className="more-button btn">Create Gift Entries</button></Link>}
                     showBookmark = {false}
                 /> 
+                <Cards
+                    image="https://hips.hearstapps.com/hmg-prod/images/woman-wrapping-christmas-gifts-1607115062.jpg"
+                    title="Blog Posts"
+                    text="Here you can read gift related blog posts curated by our team."
+                    // buttonText="Create Gift Entries"
+                    buttonLink= {<Link to="/blog"><button className="more-button btn">Read Blog Posts</button></Link>}
+                    showBookmark = {false}
+                />
                 {/* reviews instead maybe */}
             </div>
         </div>

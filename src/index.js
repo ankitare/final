@@ -9,6 +9,8 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Wishlist from "./routes/Wishlist";
 import CreateGifts from "./routes/CreateGifts";
+import Blog from "./routes/Blog";
+import BlogPost from "./routes/BlogPost";
 import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
@@ -41,6 +43,29 @@ const router = createBrowserRouter([
     loader() {
       return fetch('http://localhost:5000/gifts').then((response) => {
         return response.json();
+      });
+    }
+  },
+  {
+    path: "/blog",
+    element: <Blog />,
+    loader() {
+      return fetch('http://localhost:5000/blog').then((response) => {
+        return response.json();
+      });
+    }
+  },
+  {
+    path: "/blog/:slug",
+    element: <BlogPost />,
+    loader(loaderData) {
+      return fetch('http://localhost:5000/blog').then((response) => {
+        return response.json();
+      }).then((blog) => {
+        // filter
+        return blog.filter((post) => {
+          return post.slug === loaderData.params.slug;
+        });
       });
     }
   },

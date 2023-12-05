@@ -133,6 +133,20 @@ input{
   font-size: 13px;
 }
 
+.filterButtons{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btnspace{
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.blogcontent{
+  margin-top: 30px;
+}
+
 .wishlisticon{
   color:white;
   /* padding-left: 70px; */
@@ -153,4 +167,9 @@ input{
 
 .text-danger{
   font-size: 14px;
+}
+
+.submission{
+  text-align: center;
+  font-size: 20px;
 }

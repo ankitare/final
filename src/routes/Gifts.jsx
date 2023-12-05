@@ -13,7 +13,7 @@ export default function Gifts() {
 
     useEffect(() => {
         document.title = `Gifting 101 - ${gift.name}`;
-    }, []);
+    }, [gift.name]);
 
     return(
         <div>

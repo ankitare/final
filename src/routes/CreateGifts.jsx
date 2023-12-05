@@ -123,9 +123,9 @@ export default function CreateGifts() {
         <div>
             <Nav />
             <div className="pagecontain">
-                {isSubmitted ? (<div>You just added a new gift to Gifting 101! Here are some details about your submission: <br/>
-                    {name} is part of the {category} category. It usually costs {price}. <br/>
-                    Here is the generated item slug {slug} and here is the generated item amazon link extension {amazon}. <br/>
+                {isSubmitted ? (<div className="submission">You just added a new gift to Gifting 101! Here are some details about your submission: <br/>
+                    {name} is part of the {category} category. It usually costs ${price}. <br/>
+                    Here is the generated item slug: {slug} and here is the generated item amazon link extension: {amazon}. <br/>
                     {/* On your wishlist right now: {isOnWishlist} */}
                 </div>): 
                 (<form onSubmit={handleSubmission}> 

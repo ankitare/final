@@ -44,11 +44,12 @@ export default function Home() {
                         showWishlist = {true}
                         isOnWishlist={gift.isOnWishlist}
                         onClick={(id) => {
+                            console.log("Clicked!");
                             const isAddingWishlist = !gift.isOnWishlist; 
 
-                        const updatedWishlist = {
-                            isOnWishlist: isAddingWishlist,
-                        }
+                            const updatedWishlist = {
+                                isOnWishlist: isAddingWishlist,
+                            }
 
                             updateWishlist(id, updatedWishlist).then(
                               () => {
